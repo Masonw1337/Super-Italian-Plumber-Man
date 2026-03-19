@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dedkdwp0oow8s"]
+
+[node name="Super Italian Plumber Man Level 1" type="Node2D" unique_id=326244538]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1966777271]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1546521480]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.80417526, 0.804175, 1)
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1941916621]
+format = 2
