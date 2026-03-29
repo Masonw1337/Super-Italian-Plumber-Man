@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ctmr3k2assudd"]
+
+[node name="end" type="Node2D" unique_id=2056480219]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2122873575]
+z_index = -1
+offset_right = 1306.0
+offset_bottom = 655.0
+color = Color(0, 0, 0, 1)

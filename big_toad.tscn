@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://6axyi12gxn8s"]
+
+[ext_resource type="Script" uid="uid://capwc0p7cm5n0" path="res://big_toad.gd" id="1_6236l"]
+[ext_resource type="Texture2D" uid="uid://qlrmbb57nep1" path="res://Art/toad2.png" id="2_sno6y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5oli"]
+atlas = ExtResource("2_sno6y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuw12"]
+atlas = ExtResource("2_sno6y")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oj3k"]
+atlas = ExtResource("2_sno6y")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvsxb"]
+atlas = ExtResource("2_sno6y")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2cre"]
+atlas = ExtResource("2_sno6y")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqb0t"]
+atlas = ExtResource("2_sno6y")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwo54"]
+atlas = ExtResource("2_sno6y")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uokvq"]
+atlas = ExtResource("2_sno6y")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bxr1d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5oli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuw12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oj3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvsxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2cre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqb0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwo54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uokvq")
+}],
+"loop": true,
+"name": &"hop",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6bde"]
+size = Vector2(15, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1bfa"]
+size = Vector2(15, 4)
+
+[node name="big_toad" type="CharacterBody2D" unique_id=533319431]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_6236l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1273734888]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_bxr1d")
+animation = &"hop"
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=255495460]
+position = Vector2(-12, -14)
+target_position = Vector2(0, 18)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1294575776]
+position = Vector2(-0.5, -5.5)
+shape = SubResource("RectangleShape2D_x6bde")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=1715787872]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1927828522]
+position = Vector2(-0.5, -12)
+shape = SubResource("RectangleShape2D_s1bfa")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

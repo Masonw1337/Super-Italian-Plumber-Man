@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Super Italian Plumber Man"
+run/main_scene="uid://c20mqxq51g6vg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://bqohdqb5wiw00"
 
 [physics]
 

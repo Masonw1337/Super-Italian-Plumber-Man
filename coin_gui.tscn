@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bk6rmwm5s5nb0"]
+
+[ext_resource type="Script" uid="uid://twdubkm2d1lf" path="res://coin_gui.gd" id="1_s4fnc"]
+
+[node name="coin_gui" type="CanvasLayer" unique_id=1527326711]
+script = ExtResource("1_s4fnc")
+
+[node name="Label" type="Label" parent="." unique_id=2064927546]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="." unique_id=190431363]
+offset_left = 2.0
+offset_top = 29.0
+offset_right = 42.0
+offset_bottom = 52.0
