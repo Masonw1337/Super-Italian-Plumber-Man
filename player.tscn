@@ -516,4 +516,6 @@ shape = SubResource("RectangleShape2D_sweqy")
 
 [node name="death_timer" type="Timer" parent="." unique_id=1719389169]
 
+[node name="FireTimer" type="Timer" parent="." unique_id=1253856839]
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

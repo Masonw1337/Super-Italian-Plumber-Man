@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dyq1ge54x1s1s"]
+
+[ext_resource type="Script" uid="uid://djc0uy7wjjrix" path="res://fire_flower.gd" id="1_b3omj"]
+[ext_resource type="Texture2D" uid="uid://jap7r1muhm7g" path="res://Art/flower.png" id="2_mc8ke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2blj"]
+size = Vector2(27, 41)
+
+[node name="fire_flower" type="Area2D" unique_id=956986130]
+script = ExtResource("1_b3omj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=815658395]
+position = Vector2(0, -28)
+texture = ExtResource("2_mc8ke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1847968394]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_f2blj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

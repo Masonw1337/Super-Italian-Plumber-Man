@@ -68,7 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6bde"]
-size = Vector2(15, 11)
+size = Vector2(15, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1bfa"]
 size = Vector2(15, 4)
@@ -89,7 +89,7 @@ target_position = Vector2(0, 18)
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1294575776]
-position = Vector2(-0.5, -5.5)
+position = Vector2(-0.5, -4.5)
 shape = SubResource("RectangleShape2D_x6bde")
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1715787872]

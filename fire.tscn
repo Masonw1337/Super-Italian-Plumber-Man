@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dm05roc2hflse"]
+
+[ext_resource type="Script" uid="uid://dnx8pf6jv006p" path="res://fire.gd" id="1_2pqqt"]
+[ext_resource type="Texture2D" uid="uid://ooieqmedbbun" path="res://Art/fire.png" id="2_5ltu8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6ecg"]
+atlas = ExtResource("2_5ltu8")
+region = Rect2(1, 0, 11, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icfi2"]
+atlas = ExtResource("2_5ltu8")
+region = Rect2(12, 0, 11, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo6dx"]
+atlas = ExtResource("2_5ltu8")
+region = Rect2(23, 0, 11, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2yji"]
+atlas = ExtResource("2_5ltu8")
+region = Rect2(34, 0, 11, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjybw"]
+atlas = ExtResource("2_5ltu8")
+region = Rect2(45, 0, 11, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2pqqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6ecg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icfi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo6dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2yji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjybw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2pqqt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ltu8"]
+
+[node name="fire" type="Area2D" unique_id=1735264128]
+script = ExtResource("1_2pqqt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=369728671]
+sprite_frames = SubResource("SpriteFrames_2pqqt")
+frame_progress = 0.57615364
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620730934]
+shape = SubResource("CircleShape2D_2pqqt")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=1278257377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1910339838]
+shape = SubResource("CircleShape2D_5ltu8")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

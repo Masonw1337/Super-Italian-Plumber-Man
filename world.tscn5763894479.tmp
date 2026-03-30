@@ -1,0 +1,98 @@
+[gd_scene format=4 uid="uid://cdne8hq8bbiue"]
+
+[ext_resource type="Texture2D" uid="uid://dpqhnyoa1eq28" path="res://Art/block.png" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://yf56b20g3g0l" path="res://world.gd" id="1_pkg7o"]
+[ext_resource type="Texture2D" uid="uid://bv083ljxd3anh" path="res://Art/brick.png" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://mxuv16djctqn" path="res://player.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://dj2mekdk5vp73" path="res://enemy.tscn" id="4_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://b71hlrkt0gan6" path="res://Art/flagpole.png" id="4_ioo17"]
+[ext_resource type="PackedScene" uid="uid://6axyi12gxn8s" path="res://big_toad.tscn" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://dh6x8uhy2wnfb" path="res://coin.tscn" id="6_dwbse"]
+[ext_resource type="PackedScene" uid="uid://bk6rmwm5s5nb0" path="res://coin_gui.tscn" id="8_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://cpqqhqiv1jxin" path="res://questionblock.tscn" id="10_wse8f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
+texture = ExtResource("2_tlwt5")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
+texture = ExtResource("1_fj7yv")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wse8f"]
+texture = ExtResource("4_ioo17")
+0:0/size_in_atlas = Vector2i(1, 11)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.9026337, 71.68819, 6.2092094, 72.252655, 5.644741, 84.67108, 8.467106, 88.6224, -6.7736893, 88.05793)
+
+[sub_resource type="TileSet" id="TileSet_aqk2v"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_fj7yv")
+sources/1 = SubResource("TileSetAtlasSource_tlwt5")
+sources/2 = SubResource("TileSetAtlasSource_wse8f")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwbse"]
+size = Vector2(2083, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ioo17"]
+
+[node name="world" type="Node2D" unique_id=212158422]
+script = ExtResource("1_pkg7o")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1374208144]
+tile_map_data = PackedByteArray("AAAAACgAAAAAAAAAAAABACgAAAAAAAAAAAACACgAAAAAAAAAAAADACgAAAAAAAAAAAAEACgAAAAAAAAAAAAFACgAAAAAAAAAAAAGACgAAAAAAAAAAAAHACgAAAAAAAAAAAAIACgAAAAAAAAAAAANACgAAAAAAAAAAAAOACgAAAAAAAAAAAAPACgAAAAAAAAAAAAQACgAAAAAAAAAAAARACgAAAAAAAAAAAASACgAAAAAAAAAAAATACgAAAAAAAAAAAAUACgAAAAAAAAAAAAVACgAAAAAAAAAAAAWACgAAAAAAAAAAAAXACgAAAAAAAAAAAAYACgAAAAAAAAAAAAZACgAAAAAAAAAAAAaACgAAAAAAAAAAAAbACgAAAAAAAAAAAAcACgAAAAAAAAAAAAdACgAAAAAAAAAAAAeACgAAAAAAAAAAAAfACgAAAAAAAAAAAAgACgAAAAAAAAAAAAhACgAAAAAAAAAAAAiACgAAAAAAAAAAAAjACgAAAAAAAAAAAAkACgAAAAAAAAAAAAlACgAAAAAAAAAAAAmACgAAAAAAAAAAAAnACgAAAAAAAAAAAAoACgAAAAAAAAAAAApACgAAAAAAAAAAAAqACgAAAAAAAAAAAArACgAAAAAAAAAAAAwACgAAAAAAAAAAAAvACgAAAAAAAAAAAAuACgAAAAAAAAAAAAtACgAAAAAAAAAAAAsACgAAAAAAAAAAAAxACgAAAAAAAAAAAA0ACgAAAAAAAAAAAA1ACgAAAAAAAAAAAA2ACgAAAAAAAAAAAA3ACgAAAAAAAAAAAA4ACgAAAAAAAAAAAA5ACgAAAAAAAAAAAA6ACgAAAAAAAAAAAA7ACgAAAAAAAAAAAA8ACgAAAAAAAAAAAA9ACgAAAAAAAAAAAA+ACgAAAAAAAAAAAA/ACgAAAAAAAAAAABAACgAAAAAAAAAAABBACgAAAAAAAAAAABCACgAAAAAAAAAAABDACgAAAAAAAAAAABEACgAAAAAAAAAAABFACgAAAAAAAAAAABGACgAAAAAAAAAAAAyACgAAAAAAAAAAAAzACgAAAAAAAAAAABHACgAAAAAAAAAAAAAACcAAAAAAAAAAAAAACYAAQAAAAAAAAAAACUAAQAAAAAAAAAAACQAAQAAAAAAAAAAACMAAQAAAAAAAAAAACIAAQAAAAAAAAAAACEAAQAAAAAAAAAAACAAAQAAAAAAAAAAAB8AAQAAAAAAAAAAAB4AAQAAAAAAAAAAAB0AAQAAAAAAAABHACYAAQAAAAAAAABHACUAAQAAAAAAAABHACQAAQAAAAAAAABHACMAAQAAAAAAAABHACIAAQAAAAAAAABHACEAAQAAAAAAAABHACAAAQAAAAAAAABHAB8AAQAAAAAAAABHAB4AAQAAAAAAAABHAB0AAQAAAAAAAAANACYAAQAAAAAAAAAOACUAAQAAAAAAAAAPACQAAQAAAAAAAAAQACMAAQAAAAAAAAARACIAAQAAAAAAAAASACEAAQAAAAAAAAATACIAAQAAAAAAAAAUACMAAQAAAAAAAAAVACQAAQAAAAAAAAAWACUAAQAAAAAAAAAXACYAAQAAAAAAAAAbACYAAQAAAAAAAAAcACUAAQAAAAAAAAAcACQAAQAAAAAAAAAdACMAAQAAAAAAAAAdACIAAQAAAAAAAAAdACEAAQAAAAAAAAAeACAAAQAAAAAAAAAeAB8AAQAAAAAAAAAfAB4AAQAAAAAAAAAfAB0AAQAAAAAAAAAgAB8AAQAAAAAAAAAgACAAAQAAAAAAAAAhACEAAQAAAAAAAAAhACIAAQAAAAAAAAAhACMAAQAAAAAAAAAiACQAAQAAAAAAAAAiACUAAQAAAAAAAAAnACYAAQAAAAAAAAAnACUAAQAAAAAAAAAnACQAAQAAAAAAAAAoACQAAQAAAAAAAAAoACUAAQAAAAAAAAAoACYAAQAAAAAAAAApACYAAQAAAAAAAAApACUAAQAAAAAAAAApACQAAQAAAAAAAAAqACQAAQAAAAAAAAAqACUAAQAAAAAAAAAqACYAAQAAAAAAAAArACYAAQAAAAAAAAArACUAAQAAAAAAAAArACQAAQAAAAAAAAABACcAAAAAAAAAAAABACYAAQAAAAAAAAABACUAAQAAAAAAAAABACQAAQAAAAAAAAABACMAAQAAAAAAAAABACIAAQAAAAAAAAABACEAAQAAAAAAAAABACAAAQAAAAAAAAABAB8AAQAAAAAAAAABAB4AAQAAAAAAAAABAB0AAQAAAAAAAAAAABwAAQAAAAAAAAAAABsAAQAAAAAAAAAAABoAAQAAAAAAAAAAABkAAQAAAAAAAAAAABgAAQAAAAAAAAABABwAAQAAAAAAAAABABsAAQAAAAAAAAABABoAAQAAAAAAAAABABkAAQAAAAAAAAABABgAAQAAAAAAAAACACcAAAAAAAAAAAADACcAAAAAAAAAAAAEACcAAAAAAAAAAAAFACcAAAAAAAAAAAAGACcAAAAAAAAAAAAHACcAAAAAAAAAAAAIACcAAAAAAAAAAAANACcAAAAAAAAAAAAOACcAAAAAAAAAAAAPACcAAAAAAAAAAAAQACcAAAAAAAAAAAARACcAAAAAAAAAAAASACcAAAAAAAAAAAATACcAAAAAAAAAAAAUACcAAAAAAAAAAAAVACcAAAAAAAAAAAAWACcAAAAAAAAAAAAXACcAAAAAAAAAAAAYACcAAAAAAAAAAAAZACcAAAAAAAAAAAAaACcAAAAAAAAAAAAbACcAAAAAAAAAAAAcACcAAAAAAAAAAAAdACcAAAAAAAAAAAAeACcAAAAAAAAAAAAfACcAAAAAAAAAAAAgACcAAAAAAAAAAAAhACcAAAAAAAAAAAAiACcAAAAAAAAAAAAjACcAAAAAAAAAAAAkACcAAAAAAAAAAAAlACcAAAAAAAAAAAAmACcAAAAAAAAAAAAnACcAAAAAAAAAAAAoACcAAAAAAAAAAAApACcAAAAAAAAAAAAqACcAAAAAAAAAAAArACcAAAAAAAAAAAAsACcAAAAAAAAAAAAtACcAAAAAAAAAAAAvACcAAAAAAAAAAAAuACcAAAAAAAAAAAAwACcAAAAAAAAAAAAxACcAAAAAAAAAAAAyACcAAAAAAAAAAAAzACcAAAAAAAAAAAA0ACcAAAAAAAAAAAA1ACcAAAAAAAAAAAA2ACcAAAAAAAAAAAA3ACcAAAAAAAAAAAA4ACcAAAAAAAAAAAA5ACcAAAAAAAAAAAA6ACcAAAAAAAAAAAA7ACcAAAAAAAAAAAA8ACcAAAAAAAAAAAA9ACcAAAAAAAAAAAA+ACcAAAAAAAAAAAA/ACcAAAAAAAAAAABAACcAAAAAAAAAAABBACcAAAAAAAAAAABCACcAAAAAAAAAAABDACcAAAAAAAAAAABEACcAAAAAAAAAAABFACcAAAAAAAAAAABGACcAAAAAAAAAAABHACcAAAAAAAAAAAAjACYAAQAAAAAAAABFACEAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_aqk2v")
+
+[node name="player" parent="TileMapLayer" unique_id=1607387656 instance=ExtResource("3_tlwt5")]
+position = Vector2(55, 609)
+
+[node name="Camera2D" type="Camera2D" parent="TileMapLayer/player" unique_id=489425599]
+position = Vector2(4, 0)
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 1550
+limit_bottom = 650
+
+[node name="enemy" parent="TileMapLayer" unique_id=1078415789 instance=ExtResource("4_aqk2v")]
+position = Vector2(503, 463)
+
+[node name="big_toad" parent="TileMapLayer" unique_id=533319431 instance=ExtResource("5_036b0")]
+position = Vector2(696, 575)
+
+[node name="coin" parent="." unique_id=195379631 instance=ExtResource("6_dwbse")]
+position = Vector2(107, 558.00006)
+
+[node name="coin2" parent="." unique_id=1116981067 instance=ExtResource("6_dwbse")]
+position = Vector2(119, 558)
+
+[node name="coin3" parent="." unique_id=1941052633 instance=ExtResource("6_dwbse")]
+position = Vector2(94.25, 558)
+
+[node name="coin4" parent="." unique_id=342573332 instance=ExtResource("6_dwbse")]
+position = Vector2(82.25, 558)
+
+[node name="interact" type="Area2D" parent="." unique_id=997781440]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact" unique_id=1805216707]
+position = Vector2(1041.5, 660)
+shape = SubResource("RectangleShape2D_dwbse")
+
+[node name="coin_gui" parent="." unique_id=1527326711 instance=ExtResource("8_gbfbk")]
+
+[node name="transition" type="Area2D" parent="." unique_id=658280322]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transition" unique_id=224559292]
+position = Vector2(1112, 600)
+shape = SubResource("CircleShape2D_ioo17")
+
+[node name="questionblock" parent="." unique_id=364146746 instance=ExtResource("10_wse8f")]
+position = Vector2(57, 562)
+
+[node name="questionblock2" parent="." unique_id=1317090530 instance=ExtResource("10_wse8f")]
+position = Vector2(100, 591)
+
+[connection signal="body_entered" from="interact" to="." method="_on_interact_body_entered"]
+[connection signal="body_entered" from="transition" to="." method="_on_transition_body_entered"]
