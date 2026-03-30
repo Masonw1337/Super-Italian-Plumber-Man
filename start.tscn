@@ -33,5 +33,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2147137954]
+offset_left = 243.0
+offset_top = 150.0
+offset_right = 954.0
+offset_bottom = 258.0
+text = "When the Mushroom Kingdom’s famous Italian plumber binged on a patch of experimental \"Mega-Shrooms,\" he didn't gain super strength; instead, he transformed into a snoring, pizza-scented stone statue just as Bowser’s airships darkened the sky. With the kingdom in a panic and the hero literally petrified, Sinfanii stepped forward, calm and composed"
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

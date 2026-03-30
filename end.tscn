@@ -7,3 +7,10 @@ z_index = -1
 offset_right = 1306.0
 offset_bottom = 655.0
 color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=781676593]
+offset_left = 28.0
+offset_top = 40.0
+offset_right = 1116.0
+offset_bottom = 611.0
+text = "Just as Bowser’s shadow fell over the throne, Sinfanii struck a final, transcendent cute pose that rippled through the very air of the Mushroom Kingdom. The melody didn't just soothe the mushroom-crazed plumber; it harmonized his chaotic energy, turning Mario into a focused whirlwind of power that cleared the sky of airships in a single leap. With the Koopa King retreating in a panicked retreat and the fungal trance finally broken, Sinfanii adjusted his scarf and walked into the horizon, the silence of victory far sweeter than any applause."

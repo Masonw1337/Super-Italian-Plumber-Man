@@ -35,5 +35,18 @@ grow_vertical = 2
 text = "Quit
 "
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1140298218]
+offset_left = 107.0
+offset_top = 137.0
+offset_right = 1120.0
+offset_bottom = 391.0
+text = "With Sinfanii’s music silenced and the mushroom-crazed plumber wandering as a mindless force of nature, Bowser finally marched into the wreckage of the Mushroom Kingdom to claim his unopposed throne. The Koopa King didn't just conquer; he rebranded, replacing the cheerful Toad houses with jagged obsidian fortresses and turning the once-golden fields into a sprawling, lava-rimmed industrial wasteland. Without a hero to jump on his head or a musician to harmonize the chaos, Bowser’s shadow stretched across every corner of the land, leaving the surviving Toads to whisper the name of the fallen Sinfanii in the dark."
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2039648486]
+z_index = -1
+offset_right = 1173.0
+offset_bottom = 657.0
+color = Color(0.4862745, 0, 0, 1)
+
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

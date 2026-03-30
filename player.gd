@@ -6,7 +6,7 @@ var is_dying = false
 var is_jumping = false
 var is_big = false
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 var player_direction = 1
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 

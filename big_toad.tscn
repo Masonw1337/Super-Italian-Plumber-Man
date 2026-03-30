@@ -71,7 +71,7 @@ animations = [{
 size = Vector2(15, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1bfa"]
-size = Vector2(15, 4)
+size = Vector2(21, 4)
 
 [node name="big_toad" type="CharacterBody2D" unique_id=533319431]
 collision_layer = 2
